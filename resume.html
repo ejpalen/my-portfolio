@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link rel="icon" href="images/logo.png" type="image/x-icon" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ej Palen | Portfolio</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt=""
+      /></a>
+      <ul class="nav-menu">
+        <li class="nav-item">
+          <a href="index.html#about" class="nav-link" id="about-nav">About</a>
+        </li>
+        <li class="nav-item">
+          <a href="index.html#skills" class="nav-link" id="skills-nav"
+            >Skills</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="index.html#projects" class="nav-link" id="projects-nav"
+            >Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="index.html#contact" class="nav-link" id="contact-nav"
+            >Contact</a
+          >
+        </li>
+        <li class="nav-item">
+          <a href="resume.html" id="resume" class="nav-link active">Resume</a>
+        </li>
+      </ul>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </nav>
+
+    <div class="message">
+      <h1 data-aos="fade-up">whoops...this page is not yet available</h1>
+      <div class="button">
+        <a href="index.html">
+          <span>&#8592;</span>
+          <p>Turn back</p>
+        </a>
+      </div>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        offset: 260,
+        duration: 1000,
+      });
+    </script>
+  </body>
+</html>

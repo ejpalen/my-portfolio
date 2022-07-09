@@ -979,7 +979,8 @@ footer img {
 
   #submit {
     width: 100px;
-    padding: 15px 0;
+    padding: 20px 10;
+    width: 160px;
   }
 
   .project h1{
@@ -987,7 +988,7 @@ footer img {
   }
 }
 
-@media only screen and (max-width: 440px){
+@media only screen and (max-width: 420px){
   .abouth1{
     flex-direction: column;
     text-align: center;

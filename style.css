@@ -982,9 +982,7 @@ footer img {
   }
 
   #submit {
-    width: 100px;
-    padding: 20px 10;
-    width: 160px;
+    padding: 1.5em 4em;
   }
 
   .project h1{

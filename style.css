@@ -162,14 +162,18 @@ footer img {
 }
 
 .message a {
-  color: white;
+  color: black;
   display: flex;
   align-items: center;
   padding: 10px 15px;
-  background-color: #6d7975;
+  background-color: #8ACFE1;
   width: fit-content;
   margin-top: 20px;
   animation: 1s ease-in-out slideup;
+}
+
+.message a p{
+  color: black;
 }
 
 .message a:hover {

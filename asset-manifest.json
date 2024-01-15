@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.0d54eed7.css",
+    "main.css": "/my-portfolio/static/css/main.8cf48f71.css",
     "main.js": "/my-portfolio/static/js/main.25725c44.js",
     "static/js/787.128fc6e9.chunk.js": "/my-portfolio/static/js/787.128fc6e9.chunk.js",
     "static/media/project-nexus-fintech-sales.jpg": "/my-portfolio/static/media/project-nexus-fintech-sales.715fdb05424f89cb1eea.jpg",
@@ -76,12 +76,12 @@
     "static/media/umaknexus-logo.png": "/my-portfolio/static/media/umaknexus-logo.0b894ca804c2076b70f5.png",
     "static/media/github-logo.png": "/my-portfolio/static/media/github-logo.a02f881326c6e5e88811.png",
     "index.html": "/my-portfolio/index.html",
-    "main.0d54eed7.css.map": "/my-portfolio/static/css/main.0d54eed7.css.map",
+    "main.8cf48f71.css.map": "/my-portfolio/static/css/main.8cf48f71.css.map",
     "main.25725c44.js.map": "/my-portfolio/static/js/main.25725c44.js.map",
     "787.128fc6e9.chunk.js.map": "/my-portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0d54eed7.css",
+    "static/css/main.8cf48f71.css",
     "static/js/main.25725c44.js"
   ]
 }

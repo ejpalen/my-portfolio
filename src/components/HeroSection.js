@@ -15,11 +15,11 @@ const HeroSection = () => {
   const images = [
     imageImports.projectUmakXplore,
     imageImports.projectJurasicPot,
+    imageImports.projectClassScheduler,
     imageImports.projectEcoshoppe,
     imageImports.projectNexusFintech,
     imageImports.projectAcsad,
     imageImports.projectEcobar,
-    imageImports.projectEcoshoppe,
   ];
 
   const imagesBottom = [
@@ -112,7 +112,7 @@ const HeroSection = () => {
           <h1>Developer</h1>
         </div>
         <div className="hero-right">
-          <p>specialized in Web Design, UX / UI, and Front End Development.</p>
+          <p>specialized in Web Design, UI/UX, and Front-End Development.</p>
         </div>
       </div>
       <div className="hero-image-container">

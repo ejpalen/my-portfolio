@@ -3,6 +3,28 @@ import imageImports from "./components/imageImports";
 export const projectState = () => {
   return [
     {
+      name: "CLASS SCHEDULER",
+      homeImage: imageImports.projectClassScheduler,
+      firstImage: imageImports.projectClassSchedulerImage1,
+      secondImage: imageImports.projectClassSchedulerImage2,
+      firstDescription:
+        "A web application where students can create a wallpaper for their class schedules and share it with their classmates.",
+      secondDescription:
+        'Began with the idea: "What if I create an application where my classmates and I can share our class schedules? Our wallpapers already display our schedules, but what if we could also modify them to our own liking?". With that in mind, I started to create this web application before the start of the second semester of A.Y. 2023-2024 in our university, so my classmates could use this.',
+      url: "/project/class-scheduler",
+      tag: "React, Firebase, Web Design, UI/UX",
+      category: "Web Development",
+      logo: imageImports.classSchedulerLogo,
+      website: {
+        link: "https://class-schedule-wallpaper-maker.web.app/",
+        cta: "Visit Website",
+      },
+      github: {
+        link: "https://github.com/ejpalen/class-schedule-wallpaper-maker/",
+        cta: "View GitHub Repository",
+      },
+    },
+    {
       name: "Ecoshoppe PH",
       homeImage: imageImports.projectEcoshoppe,
       firstImage: imageImports.projectEcoshoppeImage1,

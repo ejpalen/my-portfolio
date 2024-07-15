@@ -305,6 +305,12 @@ pointer-events: none;
     .next-button{
       margin-left: 60px;
     }
+
+    .next-button p, .next-button span{
+      background: linear-gradient(15deg, rgba(178,73,233,1) 0%, rgba(60,78,255,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
   }
 
   .next-project-text{

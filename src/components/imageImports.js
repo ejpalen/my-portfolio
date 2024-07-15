@@ -16,6 +16,7 @@ import phpIcon from "../images/php-icon.png";
 import reactIcon from "../images/react-icon.png";
 import gitIcon from "../images/git-icon.png";
 //Homepage Project Image -Web
+import projectClassScheduler from "../images/project-class-scheduler.jpg";
 import projectAcsad from "../images/project-acsad.jpeg";
 import projectUmakXplore from "../images/project-umakXplore.jpeg";
 import projectEcobar from "../images/project-ecobarph.jpg";
@@ -34,6 +35,7 @@ import projectCapricho from "../images/project-capricho.png";
 import projectNextClimb from "../images/project-nextclimb.png";
 import projectCrownLtd from "../images/project-crown ltd.png";
 //Logos
+import classSchedulerLogo from "../images/class-scheduler-logo.png";
 import umakNexusLogo from "../images/umaknexus-logo.png";
 import remindMeLogo from "../images/remindme-logo.png";
 import nexusFintechLogo from "../images/nexus-fintech-sales-logo.png";
@@ -47,6 +49,8 @@ import crownltdsupplyLogo from "../images/crownltdsupply-logo.png";
 import nextclimbLogo from "../images/nextclimb-logo.png";
 import caprichoLogo from "../images/capricho-logo.png";
 //Project Images -Web Dev
+import projectClassSchedulerImage1 from "../images/project-class-scheduler-image1.png";
+import projectClassSchedulerImage2 from "../images/project-class-scheduler-image2.png";
 import projectEcoshoppeImage1 from "../images/project-ecoshoppe ph - image1.png";
 import projectEcoshoppeImage2 from "../images/project-ecoshoppe ph - image2.png";
 import projectNexusFintechImage1 from "../images/project-nexus-fintech-sales -image1.png";
@@ -114,7 +118,9 @@ const imageImports = {
   projectUmakNexus,
   projectRemindMe,
   projectNexusFintech,
+  projectClassScheduler,
   //Project Logos
+  classSchedulerLogo,
   ecoshoppeLogo,
   jurassicpotphLogo,
   umakXploreLogo,
@@ -128,6 +134,8 @@ const imageImports = {
   remindMeLogo,
   nexusFintechLogo,
   //Project Images -Web Dev
+  projectClassSchedulerImage1,
+  projectClassSchedulerImage2,
   projectEcoshoppeImage1,
   projectEcoshoppeImage2,
   projectJurasicPotImage1,

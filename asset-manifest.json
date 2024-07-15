@@ -1,9 +1,11 @@
 {
   "files": {
     "main.css": "/my-portfolio/static/css/main.8cf48f71.css",
-    "main.js": "/my-portfolio/static/js/main.25725c44.js",
+    "main.js": "/my-portfolio/static/js/main.0f61c5a4.js",
     "static/js/787.128fc6e9.chunk.js": "/my-portfolio/static/js/787.128fc6e9.chunk.js",
+    "static/media/project-class-scheduler-image1.png": "/my-portfolio/static/media/project-class-scheduler-image1.5f1dd9fe8369c3307461.png",
     "static/media/project-nexus-fintech-sales.jpg": "/my-portfolio/static/media/project-nexus-fintech-sales.715fdb05424f89cb1eea.jpg",
+    "static/media/project-class-scheduler.jpg": "/my-portfolio/static/media/project-class-scheduler.b49e72a8cff057594e9d.jpg",
     "static/media/project-crown ltd -image2.png": "/my-portfolio/static/media/project-crown ltd -image2.316c99dddd8b161acc1a.png",
     "static/media/project-umakXplore - image1.png": "/my-portfolio/static/media/project-umakXplore - image1.45e8f619b02fadd5b8ae.png",
     "static/media/project-umak-nexus -image1.png": "/my-portfolio/static/media/project-umak-nexus -image1.ee8f1c52663939ff03c9.png",
@@ -11,6 +13,7 @@
     "static/media/project-cyberpunk -image1.png": "/my-portfolio/static/media/project-cyberpunk -image1.35869741a37ae44e1425.png",
     "static/media/project-crown ltd -image1.png": "/my-portfolio/static/media/project-crown ltd -image1.d79c0af86dc39b89bbe8.png",
     "static/media/project-nextclimb -image2.png": "/my-portfolio/static/media/project-nextclimb -image2.d17732fdeb5598f8a616.png",
+    "static/media/project-class-scheduler-image2.png": "/my-portfolio/static/media/project-class-scheduler-image2.7a8a4d0c160632b098bb.png",
     "static/media/project-nextclimb -image1.png": "/my-portfolio/static/media/project-nextclimb -image1.782fc110fd3f8037e1cb.png",
     "static/media/project-umak-nexus -image2.png": "/my-portfolio/static/media/project-umak-nexus -image2.10ecc98a542b3efb597e.png",
     "static/media/project-umak-nexus.jpg": "/my-portfolio/static/media/project-umak-nexus.a1fd44d0295157fc3f0c.jpg",
@@ -75,13 +78,14 @@
     "static/media/ecoshoppe-logo.png": "/my-portfolio/static/media/ecoshoppe-logo.dd2d08257a07a5cc75e3.png",
     "static/media/umaknexus-logo.png": "/my-portfolio/static/media/umaknexus-logo.0b894ca804c2076b70f5.png",
     "static/media/github-logo.png": "/my-portfolio/static/media/github-logo.a02f881326c6e5e88811.png",
+    "static/media/class-scheduler-logo.png": "/my-portfolio/static/media/class-scheduler-logo.515981822e463528da0e.png",
     "index.html": "/my-portfolio/index.html",
     "main.8cf48f71.css.map": "/my-portfolio/static/css/main.8cf48f71.css.map",
-    "main.25725c44.js.map": "/my-portfolio/static/js/main.25725c44.js.map",
+    "main.0f61c5a4.js.map": "/my-portfolio/static/js/main.0f61c5a4.js.map",
     "787.128fc6e9.chunk.js.map": "/my-portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8cf48f71.css",
-    "static/js/main.25725c44.js"
+    "static/js/main.0f61c5a4.js"
   ]
 }

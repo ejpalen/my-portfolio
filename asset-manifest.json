@@ -1,8 +1,15 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.8cf48f71.css",
-    "main.js": "/my-portfolio/static/js/main.0f61c5a4.js",
+    "main.css": "/my-portfolio/static/css/main.5f1f226d.css",
+    "main.js": "/my-portfolio/static/js/main.b316e5bd.js",
     "static/js/787.128fc6e9.chunk.js": "/my-portfolio/static/js/787.128fc6e9.chunk.js",
+    "static/media/deans lister 5.png": "/my-portfolio/static/media/deans lister 5.a54eb5117b3abdd2c1b6.png",
+    "static/media/award 1.png": "/my-portfolio/static/media/award 1.0815c35993a74f05a970.png",
+    "static/media/deans lister 4.png": "/my-portfolio/static/media/deans lister 4.b13dbc0bc6e3342e4974.png",
+    "static/media/deans lister 3.png": "/my-portfolio/static/media/deans lister 3.1722465b80a7a5946731.png",
+    "static/media/award 2.png": "/my-portfolio/static/media/award 2.5287a0415a9d8fbb289b.png",
+    "static/media/deans lister 2.png": "/my-portfolio/static/media/deans lister 2.ced2880853efafd6a39f.png",
+    "static/media/deans lister 1.png": "/my-portfolio/static/media/deans lister 1.98808d2962a8bfd6b751.png",
     "static/media/project-class-scheduler-image1.png": "/my-portfolio/static/media/project-class-scheduler-image1.5f1dd9fe8369c3307461.png",
     "static/media/project-nexus-fintech-sales.jpg": "/my-portfolio/static/media/project-nexus-fintech-sales.715fdb05424f89cb1eea.jpg",
     "static/media/project-class-scheduler.jpg": "/my-portfolio/static/media/project-class-scheduler.b49e72a8cff057594e9d.jpg",
@@ -18,6 +25,7 @@
     "static/media/project-umak-nexus -image2.png": "/my-portfolio/static/media/project-umak-nexus -image2.10ecc98a542b3efb597e.png",
     "static/media/project-umak-nexus.jpg": "/my-portfolio/static/media/project-umak-nexus.a1fd44d0295157fc3f0c.jpg",
     "static/media/project-ecobarph.jpg": "/my-portfolio/static/media/project-ecobarph.8f8f6fea10e42e600fdc.jpg",
+    "static/media/cert 1.png": "/my-portfolio/static/media/cert 1.37db55a6d22e230065f4.png",
     "static/media/project-capricho -image2.png": "/my-portfolio/static/media/project-capricho -image2.d3d17029b3caae397b5b.png",
     "static/media/project-nexus-fintech-sales -image1.png": "/my-portfolio/static/media/project-nexus-fintech-sales -image1.b814b88e11a776033b51.png",
     "static/media/project-merc bus -image1.png": "/my-portfolio/static/media/project-merc bus -image1.c88e98a7233b71096019.png",
@@ -42,6 +50,10 @@
     "static/media/project-mindpro -image1.png": "/my-portfolio/static/media/project-mindpro -image1.5aa0c655c5e0d85b646a.png",
     "static/media/project-acsad -image2.png": "/my-portfolio/static/media/project-acsad -image2.8f822889b7e02582a404.png",
     "static/media/project-crown ltd.png": "/my-portfolio/static/media/project-crown ltd.e55be31dfb4987f17c31.png",
+    "static/media/Professional Network Chart.png": "/my-portfolio/static/media/Professional Network Chart.4f83f5872e0dab568f32.png",
+    "static/media/Job Goal Map.png": "/my-portfolio/static/media/Job Goal Map.a3826b4656333acd694d.png",
+    "static/media/freecodecamp.png": "/my-portfolio/static/media/freecodecamp.3d0f49b09a480f989f60.png",
+    "static/media/freecodecamp 2.png": "/my-portfolio/static/media/freecodecamp 2.92cb539709abe8411ed5.png",
     "static/media/project-capricho.png": "/my-portfolio/static/media/project-capricho.331eb65cbaf2e4cb3b92.png",
     "static/media/PPMori-Regular.eot": "/my-portfolio/static/media/PPMori-Regular.52584025df778e8c90e0.eot",
     "static/media/PPMori-Regular.ttf": "/my-portfolio/static/media/PPMori-Regular.a15af073a16bf5ff11c2.ttf",
@@ -80,12 +92,12 @@
     "static/media/github-logo.png": "/my-portfolio/static/media/github-logo.a02f881326c6e5e88811.png",
     "static/media/class-scheduler-logo.png": "/my-portfolio/static/media/class-scheduler-logo.515981822e463528da0e.png",
     "index.html": "/my-portfolio/index.html",
-    "main.8cf48f71.css.map": "/my-portfolio/static/css/main.8cf48f71.css.map",
-    "main.0f61c5a4.js.map": "/my-portfolio/static/js/main.0f61c5a4.js.map",
+    "main.5f1f226d.css.map": "/my-portfolio/static/css/main.5f1f226d.css.map",
+    "main.b316e5bd.js.map": "/my-portfolio/static/js/main.b316e5bd.js.map",
     "787.128fc6e9.chunk.js.map": "/my-portfolio/static/js/787.128fc6e9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.8cf48f71.css",
-    "static/js/main.0f61c5a4.js"
+    "static/css/main.5f1f226d.css",
+    "static/js/main.b316e5bd.js"
   ]
 }

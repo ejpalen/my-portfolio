@@ -41,13 +41,13 @@ const Footer = () => {
           Github
         </a>
       </div>
-      <a
+      {/* <a
         href="https://drive.google.com/drive/folders/1_oTB_w9RX8735iNueEwZvYONJUE6s6tU?usp=sharing"
         target="_blank"
         className="a-link"
       >
         View Resume
-      </a>
+      </a> */}
       <p>© 2024 Ej Palen</p>
     </footer>
   );

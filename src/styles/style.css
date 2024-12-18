@@ -161,7 +161,18 @@ border-radius: 80px;
 }
 
 .about-me .btn p{
-  font-size: 3em;
+  font-size: 1.5em;
+}
+
+.cover-letter-btn{
+  background: none;
+  color:#3C4EFF !important ;
+  border: 1px solid #3C4EFF !important;
+}
+
+.cover-letter-btn p{
+  background: none;
+  color:#3C4EFF !important ;
 }
 
 .btn:hover img{
@@ -532,8 +543,12 @@ width: 100%;
 .contact-me{
 margin: 0 60px;
 display: flex;
-flex-direction: column;
-align-items: end;
+flex-direction: row;
+/* align-items: end; */
+}
+
+.additional-links{
+  flex:  1;
 }
 
 .contact-me form{
@@ -760,6 +775,12 @@ transform: scale(1);
 .contact-me{
 align-items: initial;
 margin: 0 30px;
+flex-direction: column;
+gap: 80px;
+}
+
+.additional-links h2{
+  margin-bottom: 1rem !important;
 }
 
 .form-header h1{
@@ -882,8 +903,16 @@ width: 90%;
 
 @media (min-width: 1500px)
 {
-nav,.hero, .about-me, .skills, .projects, .contact-me, footer{
+nav,.hero, .about-me, .skills, .projects, .contact-me, footer, .awards-section{
   max-width: 1500px;
+}
+
+.awards-section{
+  margin: 0 auto !important;
+}
+
+.certificates{
+  margin-bottom: 150px !important;
 }
 
 nav{
@@ -1042,4 +1071,400 @@ max-width: 1440px;
   font-size: 26px;
   line-height: 40px;
   color: #fff;
+}
+
+.about-btn-container{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.about-btn-container a{
+  width: fit-content;
+}
+
+.about-btn-container a:first-child{
+  border-color: #3C4EFF;
+  background: none;
+}
+
+/* Awards Section Styles */
+.awards-section {
+  margin: 150px 60px;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.award-item {
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.award-item:hover {
+  transform: scale(1.02);
+}
+
+.award-image {
+  width: 100%;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.award-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.award-caption {
+  margin-top: 15px;
+  font-size: 1.2em;
+  color: #222;
+}
+
+/* Modal Styles */
+.award-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.modal-content {
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: 30px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.modal-image {
+  width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.modal-caption {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #222;
+  z-index: 1001;
+  transition: transform 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awards-section {
+    margin: 100px 30px;
+  }
+
+  .awards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Update the awards grid styles */
+.awards-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .awards-grid-two {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Add these new styles for the expanded view */
+.certificate-expanded-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.expanded-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.expanded-image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.expanded-caption {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #222;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awards-section {
+    margin: 100px 30px;
+  }
+
+  .awards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Update the awards grid styles */
+.awards-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .awards-grid-two {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+/* Add these new styles for the expanded view */
+.certificate-expanded-view {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(255, 255, 255, 1);
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.expanded-content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.expanded-image {
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+}
+
+.expanded-caption {
+  width: 100%;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #222;
+  z-index: 1001;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+.close-button:hover {
+  transform: rotate(90deg);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awards-section {
+    margin: 100px 30px;
+  }
+
+  .awards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+  }
+}
+
+/* Update the awards grid styles */
+.awards-grid-two {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  margin-top: 50px;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Update responsive styles */
+@media (max-width: 768px) {
+  .awards-grid-two {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
+
+.video-resume-header{
+  margin-top: 150px;
+}
+
+.video-section {
+  margin: 2rem 0;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+}
+
+.video-section iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.additional-links {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+}
+
+.additional-links h2{
+  margin-bottom: 2.5rem;
+}
+
+.link-item {
+  margin-bottom: 1.5rem; /* Space between link items */
+}
+
+.link-item h3 {
+  margin: 1.5rem 0; /* Space above and below the header */
+}
+
+.link-item p {
+  margin: 1rem 0; /* Space above and below the description */
+}
+
+.link-item a {
+  color: #007bff; /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+.link-item a:hover {
+  text-decoration: underline; /* Underline on hover */
 }

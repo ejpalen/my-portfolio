@@ -1,0 +1,29 @@
+.awards-section {
+  padding: 2rem 0;
+}
+
+.awards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.award-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.award-image img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.award-caption {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.4;
+} 

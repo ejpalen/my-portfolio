@@ -1,9 +1,12 @@
 import { useEffect } from "react";
 import HeroSection from "../components/HeroSection";
 import AboutMeSection from "../components/AboutMeSection";
+import AwardsSection from "../components/AwardsSection";
 import SkillsSection from "../components/SkillsSection";
 import ProjectsSection from "../components/ProjectsSection";
 import ContactMeSection from "../components/ContactMeSection";
+import DeansCertificatesSection from '../components/DeansCertificatesSection';
+import Certificates from "../components/Certificates";
 
 const Home = ({ currentCategory, setCurrentCategory }) => {
   useEffect(() => {
@@ -17,12 +20,16 @@ const Home = ({ currentCategory, setCurrentCategory }) => {
     <>
       <HeroSection />
       <AboutMeSection />
+      <AwardsSection />
+      <DeansCertificatesSection />
+      <Certificates />
       <SkillsSection />
       <ProjectsSection
         currentCategory={currentCategory}
         setCurrentCategory={setCurrentCategory}
       />
       <ContactMeSection />
+      
     </>
   );
 };

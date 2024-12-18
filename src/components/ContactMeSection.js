@@ -3,6 +3,9 @@ import emailjs from "@emailjs/browser";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import arrow1 from "../images/arrow.png";
+import chart from "../images/certificates/Professional Network Chart.png";
+import goal from "../images/certificates/Job Goal Map.png";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -57,6 +60,21 @@ const ContactMeSection = () => {
 
   return (
     <div className="contact-me">
+      <div className="additional-links">
+        <h2>Additional Resources</h2>
+        
+        <div className="link-item">
+          <h3>Job Goal Map</h3>
+          <p>A comprehensive guide to my career goals.</p>
+          <a href={goal} target="_blank" rel="noopener noreferrer">View Job Goal Map</a>
+        </div>
+        
+        <div className="link-item">
+          <h3>Professional Network Chart</h3>
+          <p>Visualization of my professional connections and opportunities.</p>
+          <a href={chart} target="_blank" rel="noopener noreferrer">View Professional Network Chart</a>
+        </div>
+      </div>
       <div className="contact-me-wrapper" id="contact-me-nav">
         <div className="form-header power4Fx">
           <h3 className="fadeToUp">Your feedback matters.</h3>

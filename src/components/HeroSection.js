@@ -7,9 +7,8 @@ gsap.registerPlugin(ScrollTrigger);
 
 const HeroSection = () => {
   const marqueeContainerRef = useRef(null);
-  const imagesRef = useRef([]);
   const marqueeContainerRefBottom = useRef(null);
-  const imagesRefBottom = useRef([]);
+  const sectionRef = useRef(null);
 
   //Images used for marquee container
   const images = [
@@ -34,110 +33,84 @@ const HeroSection = () => {
   ];
 
   useEffect(() => {
-    const marqueeContainer = marqueeContainerRef.current;
-    const marqueeImages = imagesRef.current;
-    const marqueeContainerBottom = marqueeContainerRefBottom.current;
-    const marqueeImagesBottom = imagesRefBottom.current;
+    const ctx = gsap.context(() => {
+      const tl = gsap.timeline();
+      
+      tl.to(".hero-left", {
+        opacity: 1,
+        y: "0px",
+        ease: "power2.out",
+        duration: 0.5,
+      })
+      .to(".hero-right", {
+        opacity: 1,
+        x: "0px",
+        ease: "power2.out",
+        duration: 0.5,
+      }, "-=0.3")
+      .to([marqueeContainerRef.current, marqueeContainerRefBottom.current], {
+        opacity: 1,
+        y: "0px",
+        ease: "power2.out",
+        duration: 0.5,
+      }, "-=0.3");
 
-    //Animation for hero section when document is loaded
-    gsap.to(".hero-left", {
-      opacity: 1,
-      y: "0px",
-      ease: "back",
-      duration: 0.5,
-      delay: 0.3,
-    });
+      const scrollTl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: "top top",
+          end: "bottom top",
+          scrub: 1,
+          invalidateOnRefresh: true,
+          fastScrollEnd: true,
+        }
+      });
 
-    gsap.to(".hero-right", {
-      delay: 0.4,
-      opacity: 1,
-      ease: "back",
-      x: "0px",
-      duration: 0.6,
-    });
-    gsap.to(marqueeContainer, {
-      delay: 0.6,
-      opacity: 1,
-      y: "0px",
-      ease: "back",
-      duration: 0.6,
-    });
-    gsap.to(marqueeContainerBottom, {
-      delay: 0.6,
-      opacity: 1,
-      y: "0px",
-      ease: "back",
-      duration: 0.6,
-    });
+      scrollTl
+        .to(marqueeContainerRef.current, {
+          x: `-=${window.innerWidth * 0.5}`,
+          ease: "none",
+        })
+        .to(marqueeContainerRefBottom.current, {
+          x: `+=${window.innerWidth * 0.5}`,
+          ease: "none",
+        }, "<");
+    }, sectionRef);
 
-    // Scroll Animation for Marquee Container
-    let imagesTotalWidth = 0;
-    let imagesTotalWidthBottom = 0;
-    marqueeImages.forEach((image) => {
-      imagesTotalWidth += image.offsetWidth;
-    });
-
-    marqueeImagesBottom.forEach((image) => {
-      imagesTotalWidthBottom += image.offsetWidth;
-    });
-
-    gsap.set(marqueeContainer, { width: imagesTotalWidth });
-    gsap.set(marqueeContainerRefBottom, { width: imagesTotalWidthBottom });
-
-    const scrollSpeed = 1.4;
-
-    const handleScroll = () => {
-      const scrollAmount = window.scrollY * scrollSpeed;
-      gsap.to(marqueeContainer, { x: -scrollAmount });
-    };
-    const handleScrollBottom = () => {
-      const scrollAmount = window.scrollY * scrollSpeed;
-      gsap.to(marqueeContainerBottom, { x: +scrollAmount });
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", handleScrollBottom);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("scroll", handleScrollBottom);
-    };
+    return () => ctx.revert();
   }, []);
 
   return (
-    <div className="hero-wrapper">
+    <div className="hero-wrapper" ref={sectionRef}>
       <div className="hero">
-        <div className="hero-left">
+        <div className="hero-left" style={{ opacity: 0, transform: 'translateY(20px)' }}>
           <h1>Web</h1>
           <h1>Developer</h1>
         </div>
-        <div className="hero-right">
+        <div className="hero-right" style={{ opacity: 0, transform: 'translateX(20px)' }}>
           <p>specialized in Web Design, UI/UX, and Front-End Development.</p>
         </div>
       </div>
       <div className="hero-image-container">
-        <div className="hero-image" ref={marqueeContainerRef}>
+        <div 
+          className="hero-image" 
+          ref={marqueeContainerRef}
+          style={{ opacity: 0, transform: 'translateY(20px)' }}
+        >
           {images.map((image, index) => (
-            <div
-              className="imgBx"
-              key={index}
-              ref={(el) => (imagesRef.current[index] = el)}
-            >
-              <img src={image} alt="marquee-image" />
+            <div className="imgBx" key={index}>
+              <img src={image} alt="marquee-image" loading="lazy" />
             </div>
           ))}
         </div>
         <div
           className="hero-image hero-image-bottom"
           ref={marqueeContainerRefBottom}
+          style={{ opacity: 0, transform: 'translateY(20px)' }}
         >
           {imagesBottom.map((image, index) => (
-            <div
-              className="imgBx"
-              key={index}
-              ref={(el) => (imagesRefBottom.current[index] = el)}
-            >
-              <img src={image} alt="marquee-image" />
+            <div className="imgBx" key={index}>
+              <img src={image} alt="marquee-image" loading="lazy" />
             </div>
           ))}
         </div>

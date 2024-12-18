@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-scroll";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -9,88 +9,97 @@ gsap.registerPlugin(ScrollTrigger);
 
 const AboutMe = () => {
   const arrow = useRef(null);
+  const textRef = useRef(null);
+  const [isWideScreen] = useState(window.innerWidth >= 900);
 
   useEffect(() => {
-    const arrowImg = arrow.current;
-    gsap.to(arrowImg, {
-      scrollTrigger: {
-        trigger: arrowImg,
-        start: "top 80%",
-        end: "top 80%",
-        scrub: false,
-      },
-      width: "80px",
-      duration: 0.2,
-    });
-
-    gsap.from(".highlight", {
-      scrollTrigger: {
-        trigger: ".highlight",
-        start: "top 80%",
-        scrub: true,
-        toggleClass: "highlighted",
-      },
-    });
-
-    if (window.innerWidth >= 900) {
-      const splitTypes = document.querySelectorAll(".aboutme-gradient");
-
-      splitTypes.forEach((char, i) => {
-        const text = new SplitType(char, { types: "chars" });
-
-        gsap.from(text.chars, {
-          scrollTrigger: {
-            trigger: char,
-            start: "top 90%",
-            end: "top 30%",
-            scrub: true,
-          },
-          opacity: 0.2,
-          stagger: 0.1,
-        });
+    const ctx = gsap.context(() => {
+      gsap.to(arrow.current, {
+        scrollTrigger: {
+          trigger: arrow.current,
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+        },
+        width: "80px",
+        duration: 0.3,
+        ease: "power2.out",
       });
-    }
-  }, []);
+
+      gsap.from(".highlight", {
+        scrollTrigger: {
+          trigger: ".highlight",
+          start: "top 80%",
+          toggleActions: "play none none reverse",
+          toggleClass: "highlighted",
+        },
+      });
+
+      if (isWideScreen) {
+        const splitTypes = document.querySelectorAll(".aboutme-gradient");
+        splitTypes.forEach((char) => {
+          const text = new SplitType(char, { 
+            types: "chars",
+            absolute: false 
+          });
+
+          gsap.from(text.chars, {
+            scrollTrigger: {
+              trigger: char,
+              start: "top 90%",
+              end: "top 30%",
+              scrub: 0.5,
+              toggleActions: "play none none reverse",
+            },
+            opacity: 0.2,
+            stagger: {
+              amount: 0.6,
+              from: "start",
+            },
+            ease: "power2.out",
+          });
+        });
+      }
+    });
+
+    return () => {
+      ctx.revert(); 
+    };
+  }, [isWideScreen]); 
+
+  const renderText = (text, className) => {
+    return isWideScreen ? (
+      <span className={className}>
+        {text.split('\n').map((line, i) => (
+          <React.Fragment key={i}>
+            {line}<br />
+          </React.Fragment>
+        ))}
+      </span>
+    ) : (
+      <span className={className}>{text}</span>
+    );
+  };
+
+  const mainText = `I create captivating web designs that bring\nclients' visions to life, leaving a lasting\nimpression on audiences. By blending\ninnovative design trends with intuitive\nuser experiences, I ensure websites\nengage and drive tangible results.`;
+  
+  const highlightText = `My goal is to enhance brand awareness\nand maximize sales through impactful\nweb design.`;
 
   return (
     <div className="about-me" id="about-me-wrapper">
-      <div className="about-me-text">
+      <div className="about-me-text" ref={textRef}>
         <p className="p30" id="aboutme">
-          {window.innerWidth >= 900 ? (
-            <span className="aboutme-gradient">
-              I create captivating web designs that bring <br></br>clients'
-              visions to life, leaving a lasting<br></br> impression on
-              audiences. By blending <br></br>innovative design trends with
-              intuitive <br></br>user experiences, I ensure websites <br></br>
-              engage and drive tangible results.
-            </span>
-          ) : (
-            <span className="aboutme-gradient">
-              I create captivating web designs that bring clients' visions to
-              life, leaving a lasting impression on audiences. By blending
-              innovative design trends with intuitive user experiences, I ensure
-              websites engage and drive tangible results.
-            </span>
-          )}
-          <br></br>
-          <br></br>
-          {window.innerWidth >= 900 ? (
-            <span className="highlight">
-              My goal is to enhance brand awareness <br></br>and maximize sales
-              through impactful <br></br> web design.
-            </span>
-          ) : (
-            <span className="highlight">
-              <span>
-                My goal is to enhance brand awareness and maximize sales through
-                impactful web design.
-              </span>
-            </span>
-          )}
-          <br></br>
-          <br></br>
+          {renderText(mainText, "aboutme-gradient")}
+          <br /><br />
+          {renderText(highlightText, "highlight")}
+          <br /><br />
         </p>
-        <Link to="contact-me-nav" spy smooth offset={-20} className="a-link">
+        <Link 
+          to="contact-me-nav" 
+          spy={true} 
+          smooth={true} 
+          offset={-20} 
+          className="a-link"
+        >
           <div className="btn">
             <p>Drop me a line</p>
             <img src={arrow1} alt="arrow-icon" ref={arrow} />

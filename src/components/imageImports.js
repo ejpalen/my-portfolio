@@ -16,18 +16,18 @@ import phpIcon from "../images/php-icon.png";
 import reactIcon from "../images/react-icon.png";
 import gitIcon from "../images/git-icon.png";
 //Homepage Project Image -Web
-import projectClassScheduler from "../images/project-class-scheduler.jpg";
+import projectClassScheduler from "../images/project-class-scheduler.jpeg";
 import projectAcsad from "../images/project-acsad.jpeg";
 import projectUmakXplore from "../images/project-umakXplore.jpeg";
-import projectEcobar from "../images/project-ecobarph.jpg";
-import projectEcoshoppe from "../images/project-ecoshoppe ph.jpeg";
-import projectJurasicPot from "../images/project-jurassic pot ph.jpeg";
-import projectNexusFintech from "../images/project-nexus-fintech-sales.jpg";
+import projectEcobar from "../images/project-ecobarph.jpeg";
+import projectEcoshoppe from "../images/project-ecoshoppe_ph.jpeg";
+import projectJurasicPot from "../images/project-jurassic_pot_ph.jpeg";
+import projectNexusFintech from "../images/project-nexus-fintech-sales.jpeg";
 //Homepage Project Image -Software
-import projectUmakNexus from "../images/project-umak-nexus.jpg";
-import projectRemindMe from "../images/project-remindme.jpg";
-import projectMercAirlines from "../images/project-merc airlines.jpeg";
-import projectMercBus from "../images/project-merc bus.jpeg";
+import projectUmakNexus from "../images/project-umak-nexus.jpeg";
+import projectRemindMe from "../images/project-remindme.jpeg";
+import projectMercAirlines from "../images/project-merc_airlines.jpeg";
+import projectMercBus from "../images/project-merc_bus.jpeg";
 import projectMindPro from "../images/project-mindpro.jpeg";
 import projectCyberpunk from "../images/project-cyberpunk.jpeg";
 //Homepage Project Image -Design

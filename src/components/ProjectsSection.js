@@ -8,87 +8,76 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Nav = ({ currentCategory, setCurrentCategory }) => {
   const projects = projectState();
-
   const dropdownRef = useRef(null);
   const webDivRef = useRef(null);
+  const projectsHeader = useRef(null);
+  const imageContainerRef = useRef(null);
+  const imageRef = useRef(null);
 
-  //When dropdown item is clicked
+  const [currentImage, setCurrentImage] = useState("");
+
   const show = (value) => {
     setCurrentCategory(value);
   };
 
-  //Dropdown Item hovered
   const handleHover = () => {
     dropdownRef.current.classList.toggle("active");
   };
 
-  //Dropdown Item Clicked
   const handleClick = () => {
     dropdownRef.current.classList.add("active");
   };
 
-  //Image Hover reveal
-  useEffect(() => {
-    const linkElements = document.querySelectorAll(".link");
-    const linkHoverRevealElements = document.querySelectorAll(".hover-reveal");
-    const linkImages = document.querySelectorAll(".hidden-img");
-    const links = document.querySelectorAll(".link");
+  const handleProjectHover = (imageUrl) => {
+    if (window.innerWidth <= 900) return;
 
-    if (window.innerWidth > 900) {
-      linkElements.forEach((link, i) => {
-        link.addEventListener("mousemove", (e) => {
-          linkHoverRevealElements[i].style.opacity = 1;
-          linkHoverRevealElements[
-            i
-          ].style.transform = `translate(-50%, -50% ) rotate(0deg)`;
-          linkImages[i].style.transform = "scale(1, 1)";
-          linkHoverRevealElements[i].style.left = e.clientX + "px";
-        });
-
-        link.addEventListener("mouseleave", () => {
-          linkHoverRevealElements[i].style.opacity = 0;
-          linkHoverRevealElements[
-            i
-          ].style.transform = `translate(-50%, -50%) rotate(5deg)`;
-          linkImages[i].style.transform = "scale(0.7, 0.7)";
-        });
+    if (currentImage !== imageUrl) {
+      // Fade out current image
+      gsap.to(imageRef.current, {
+        opacity: 0,
+        scale: 0.8,
+        duration: 0.1,
+        onComplete: () => {
+          setCurrentImage(imageUrl);
+          // Fade in new image
+          gsap.to(imageRef.current, {
+            opacity: 1,
+            scale: 1,
+            duration: 0.3,
+            ease: "power2.out"
+          });
+        }
       });
 
-      links.forEach((link) => {
-        const otherLinks = Array.from(links).filter((l) => l !== link);
-
-        link.addEventListener("mouseenter", () => {
-          otherLinks.forEach((otherLink) => {
-            otherLink.classList.add("inactive");
-            otherLink.classList.remove("active");
-          });
-          link.classList.add("active");
-          link.classList.remove("inactive");
-        });
-
-        link.addEventListener("mouseleave", () => {
-          otherLinks.forEach((otherLink) => {
-            otherLink.classList.remove("inactive");
-            otherLink.classList.remove("active");
-          });
-
-          const isHovered = Array.from(links).some((l) =>
-            l.classList.contains("active")
-          );
-
-          if (!isHovered) {
-            link.classList.add("inactive");
-          }
-        });
+      gsap.to(imageContainerRef.current, {
+        opacity: 1,
+        duration: 0.1
       });
     }
-  }, [currentCategory]);
+  };
 
-  // Animation
-  const projectsHeader = useRef(null);
+  const handleProjectLeave = () => {
+    if (window.innerWidth <= 900) return;
+
+    gsap.to(imageContainerRef.current, {
+      opacity: 0,
+      duration: 0.1
+    });
+  };
+
+  const handleMouseMove = (e) => {
+    if (window.innerWidth <= 900) return;
+
+    gsap.to(imageContainerRef.current, {
+      left: `${e.pageX}px`,
+      top: `${e.pageY}px`,
+      duration: 0.3,
+      ease: "power2.out"
+    });
+  };
+
   useEffect(() => {
     const projectsHeaderDiv = projectsHeader.current;
-
     gsap.to(projectsHeaderDiv, {
       opacity: 1,
       x: 0,
@@ -101,6 +90,29 @@ const Nav = ({ currentCategory, setCurrentCategory }) => {
 
   return (
     <div className="projects" id="projects-nav">
+      <div 
+        ref={imageContainerRef} 
+        className="floating-image-container"
+        style={{
+          position: 'fixed',
+          zIndex: 100,
+          pointerEvents: 'none',
+          opacity: 0,
+          transform: 'translate(-50%, -50%)'
+        }}
+      >
+        <img
+          ref={imageRef}
+          src={currentImage}
+          alt="Project preview"
+          style={{
+            width: '400px',
+            height: 'auto',
+            borderRadius: '5px'
+          }}
+        />
+      </div>
+
       <div className="projects-header">
         <h2>Projects</h2>
         <div
@@ -121,13 +133,14 @@ const Nav = ({ currentCategory, setCurrentCategory }) => {
             <div onClick={() => show("Software Development")}>
               Software Development
             </div>
-            {/* <div onClick={() => show("Web and Graphic Design")}>
-              Web and Graphic Design
-            </div> */}
           </div>
         </div>
       </div>
-      <div className="nav power4Fx" ref={projectsHeader}>
+      <div 
+        className="nav power4Fx" 
+        ref={projectsHeader}
+        onMouseMove={handleMouseMove}
+      >
         <ul>
           <div ref={webDivRef} className="web project-category">
             {projects.map((project) => {
@@ -135,19 +148,16 @@ const Nav = ({ currentCategory, setCurrentCategory }) => {
                 return (
                   <li key={project.name} className="fadeToRight">
                     <Link to={project.url}>
-                      <div className="link">
+                      <div 
+                        className="link"
+                        onMouseEnter={() => handleProjectHover(project.homeImage)}
+                        onMouseLeave={handleProjectLeave}
+                      >
                         <div className="link-left">
                           <span>{project.name}</span>
                           <p>{project.firstDescription}</p>
                         </div>
                         <p>{project.tag}</p>
-                        <div className="hover-reveal image01">
-                          <img
-                            src={project.homeImage}
-                            alt="web-project-image"
-                            className="hidden-img"
-                          />
-                        </div>
                       </div>
                     </Link>
                   </li>
